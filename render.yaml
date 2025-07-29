@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: django-app
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn student_system.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: student_system.settings
+      - key: PYTHON_VERSION
+        value: 3.13.5
