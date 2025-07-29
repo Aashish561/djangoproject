@@ -1,0 +1,25 @@
+# Python cache files
+__pycache__/
+*.pyc
+
+# SQLite database
+db.sqlite3
+
+# Django static files
+/staticfiles/
+/media/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# Windows system files
+Thumbs.db
+.DS_Store

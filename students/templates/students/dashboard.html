@@ -1,0 +1,47 @@
+{% extends "students/base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <h2>{{ department }} Department Dashboard</h2>
+    
+    <div class="actions">
+        <a href="{% url 'add_student' %}" class="btn-add">Add New Student</a>
+        <i class="fas fa-user-plus"></i>
+    </div>
+
+    <div class="stats">
+        <div class="stat-card">
+            <h3>{{ students.count }}</h3>
+            <p>Total Students</p>
+        </div>
+    </div>
+
+    <h3>Recent Students</h3>
+    {% if students %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.student_id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.phone }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No students found in your department.</p>
+    {% endif %}
+</div>
+{% endblock %}

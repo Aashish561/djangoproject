@@ -1,0 +1,435 @@
+:root {
+    --primary: #4361ee;
+    --primary-dark: #3a56d4;
+    --secondary: #3f37c9;
+    --accent: #4895ef;
+    --danger: #f72585;
+    --success: #4cc9f0;
+    --warning: #f8961e;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --gray: #6c757d;
+    --white: #ffffff;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: var(--light);
+}
+
+/* Header/Navbar Styles */
+.app-header {
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--primary);
+}
+
+.logo i {
+    font-size: 1.75rem;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* User Info - Right Aligned */
+.user-info-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.user-avatar {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.username {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.department {
+    font-size: 0.75rem;
+    color: var(--gray);
+}
+
+.logout-btn {
+    color: var(--gray);
+    font-size: 1.25rem;
+    transition: var(--transition);
+    margin-left: 1rem;
+}
+
+.logout-btn:hover {
+    color: var(--danger);
+}
+
+/* Navbar Styles */
+nav {
+    background: #34495e;
+    padding: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    flex: 1;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.8rem 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background: blue;
+}
+
+/* User info styles (unchanged from your original) */
+.user-info {
+    font-size: 0.9rem;
+    color: blue;
+    margin-left: auto; /* This pushes it to the right */
+    display: flex;
+    align-items: center;
+}
+
+.user-info a {
+    color: #3498db;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.user-info a:hover {
+    text-decoration: underline;
+}
+
+/* Student Table Styles */
+.table-container {
+    margin: 2rem 3rem; /* 3rem left/right margins */
+    width: calc(100% - 6rem); /* Compensate for total horizontal margins */
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+th, td {
+    padding: 0.75rem 1.25rem; /* Increased horizontal padding */
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background: #34495e;
+    color: white;
+    position: sticky;
+    top: 0;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f7ff;
+}
+
+/* Status badge improvements */
+.status-badge {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-active {
+    background-color: #e6f7ff;
+    color: #0066cc;
+    border: 1px solid #b3e0ff;
+}
+
+.status-inactive {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border: 1px solid #e9ecef;
+}
+
+/* Make ID column slightly narrower */
+th:nth-child(1),
+td:nth-child(1) {
+    width: 80px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .table-container {
+        margin: 1.5rem;
+        width: calc(100% - 3rem);
+    }
+    
+    th, td {
+        padding: 0.6rem 1rem;
+    }
+}
+
+.dashboard {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .dashboard-actions {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .btn-add {
+        background: #4361ee;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 6px;
+        font-weight: 500;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-add:hover {
+        background: #3a56d4;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .btn-add i {
+        font-size: 1rem;
+    }
+    
+    .stat-card {
+        background: lightblue;
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        text-align: center;
+        min-width: 180px;
+    }
+    
+    .stat-card h3 {
+        margin: 0;
+        font-size: 2rem;
+        color: #4361ee;
+    }
+    
+    .stat-card p {
+        margin: 0.5rem 0 0;
+        color: #6c757d;
+        font-size: 0.9rem;
+    }
+
+.search-container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+    }
+    
+.search-form {
+        display: flex;
+        gap: 1rem;
+        margin: 2rem 0;
+    }
+    
+.search-form input[type="text"] {
+        flex: 1;
+        padding: 0.8rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 1rem;
+        min-width: 300px;
+    }
+    
+.search-form .btn {
+        background: #4361ee;
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 6px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    
+.search-form .btn:hover {
+        background: #3a56d4;
+    }
+
+.form-container {
+        border: 1px solid #bdc3c7;
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .form-container h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #2c3e50;
+    }
+
+    .form-row {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .form-group {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group.address {
+        flex: 2; /* Makes address field wider */
+    }
+
+    .form-group.small {
+        max-width: 150px; /* For smaller fields like ID */
+    }
+
+    label {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: #34495e;
+    }
+
+    input, select, textarea {
+        padding: 0.75rem;
+        border: 1px solid black;
+        border-radius: 4px;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    textarea {
+        height: 80px; /* Smaller address field */
+        resize: vertical;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn[type="submit"] {
+        background: #4361ee;
+        color: white;
+    }
+
+    .btn[type="submit"]:hover {
+        background: #3a56d4;
+    }
+
+    .btn.cancel {
+        background: #95a5a6;
+        color: white;
+    }
+
+    .btn.cancel:hover {
+        background: #7f8c8d;
+    }
+
+    .error-message {
+        color: #e74c3c;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+    }
